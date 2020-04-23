@@ -8,7 +8,6 @@ import fs2.{Stream, io, text}
 
 object Main extends App {
   // println("Hello " |+| "Cats!")
-
   Converter.run(Nil)
 }
 

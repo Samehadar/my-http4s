@@ -8,8 +8,6 @@ object Http4s002 {
 
   type HttpApp = Request => Future[Response]
 
-
-
   val app: HttpApp = {
     case Request(POST, Uri("/translate"), text) =>
       Translator.future(text).map(Response(OK, _))

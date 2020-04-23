@@ -42,10 +42,6 @@ object Http4s008 {
         })
   }
 
-//  def seal2[F[_]: Monad](routes: HttpRoutes[F]): HttpRoutes[F] = {
-//    routes.mapF{ _.getOrElse(OptionT.liftF(Monad[F].pure((Response(NotFound))))) }
-//  }
-
   def log[F[_]: Monad](app: Http[F]): Http[F] =
     app.mapF(Monad[F].pure(println("v008 TRANSLATING")) *> _)
 
@@ -53,6 +49,5 @@ object Http4s008 {
   val es: HttpRoutes[IO] = translate(log(hello(Uri("/hola"))) )
 
   val app: Http[IO] = HttpApp(seal(en.combineK(es)).run(_:Request).value.map { _.get })
-
 }
 

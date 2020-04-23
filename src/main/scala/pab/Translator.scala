@@ -13,8 +13,6 @@ import fs2._
 
 object Translator {
 
-
-
   val translate: Map[String, String] = HashMap(
     "one" -> "uno",
     "Hello" -> "Hola",

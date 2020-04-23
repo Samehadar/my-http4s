@@ -12,11 +12,4 @@ object Http4s001 {
     case _ =>
       Response(NotFound)
   }
-
-
-  def main(args: Array[String]): Unit = {
-    val r = Request(POST, Uri("/hello"), "Paul")
-    val a = helloWorld
-    println(a(r).body)
-  }
 }

@@ -1,6 +1,5 @@
 package pab
 
-// import scala.concurrent.ExecutionContext.Implicits.global
 import scala.concurrent.Future
 
 object Http4s003 {

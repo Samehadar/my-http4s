@@ -1,10 +1,10 @@
 # HTTP applications are just a Kleisli function from a streaming request to a polymorphic effect of a streaming response.
 # So what's the problem?
 
-My implementation of Http4s for learning purposes, base on [Ross Baker's presentation][presentation]
+My implementation of Http4s for learning purposes, based on [Ross Baker's presentation][presentation]
 [and his slides][slides]
 
-The the code in his slides actually compiles and runs.
+The code in his slides actually compiles and runs.
 
 There was still a fair amount to do though to get everything working. Ross's approach 
 is to add functionality incrementally, creating several versions.
@@ -15,10 +15,10 @@ The goal is to implemented an http application as a single function, taking a re
 as input and returning a response as output.
 
 Not a new idea. Rack in Ruby and many other frameworks take a similar approach. The
-difference with http4s is that the function must be pure and side effect free.
+difference with http4s is that the function should be pure and side effect free.
 
 Side effects are deferred to "the end of the world", Haskell style.
-To Achieve this purity, Cats and Cats-effects are used extensively. 
+To Achieve this Cats and Cats-effects are used extensively. 
 
 In addition to Cats the following libraries have been added as dependencies:
 
